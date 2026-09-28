@@ -4,6 +4,10 @@
 
 # First line selects the the system shell, then below set the failure behaviour
 set -e
+if [ "$PWD" != "$HOME" ]; then
+    echo 'Copy this script into your HOME directory before running it.' >&2
+    exit 1
+fi
 
 # Define the target and prepare a workspace
 version=5.3
